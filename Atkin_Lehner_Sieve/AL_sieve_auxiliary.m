@@ -306,7 +306,7 @@ end function;
 // In all cases where all the quadratic points are pullbacks from X_0+(N),
 // it is sufficient to simply run AL_sieve(N).
 
-AL_sieve := function(N : d := N, nonpullbacks := {}, badPrimes := {})
+AL_sieve := function(N : d := N, nonpullbacks := {}, extra_rational_points := {}, badPrimes := {})
 	printf "Genus of X_0(%o) is: %o\n", N, Dimension(CuspForms(N));
 	printf "Considering X_0(%o)/w_%o.\n", N, d;
 	
@@ -343,6 +343,7 @@ AL_sieve := function(N : d := N, nonpullbacks := {}, badPrimes := {})
 
 	//known degree 1 places
 	pls1 := [XN_Cusps[i] : i in [1..#XN_Cusps] | Degree(XN_Cusps[i]) eq 1];
+        pls1 := pls1 cat [Place(XN ! P) : P in extra_rational_points]; // include any extra rational points
 
 	//known degree 2 rational effective divisors
 	deg2 := [1*XN_Cusps[i] : i in [1..#XN_Cusps] | Degree(XN_Cusps[i]) eq 2];
