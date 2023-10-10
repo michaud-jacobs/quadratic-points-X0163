@@ -3,9 +3,6 @@ load "symm_chab.m";
 
 N := 163;
 X,als,_,_,c_infty := eqs_quos(N,[]);
-w := als[1];
-Mw := Matrix(w);
-c_0 := w(c_infty);
 
 // check that R_CM and P_CM do not reduce to the same point mod p for 
 // odd primes (not 163) up to 500 that are not inert in B
@@ -68,8 +65,15 @@ H := AbsoluteField(NumberField(H_ab));
 OH := Integers(H);
 assert IsTotallySplit(167, OH);
 
+
+w := als[1];
+Mw := Matrix(w);
+c_0 := w(c_infty);
+g_quo := 6;
 c_o_plus_P_CM := Divisor(c_0) + Divisor(P_CM);
 for p in PrimesInInterval(3, 37) do
+    assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo);
+end for;
     
 
 
