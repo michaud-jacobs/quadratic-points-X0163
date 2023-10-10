@@ -12,8 +12,8 @@ can be at the end of the log file "atkin_lehner_sieve_for_X.log"
 It is:
 [ 0, A.1, 26*A.1]
 
-Here, A.1 corresponds to [c_0-c_\infty] = [D_t] which has order 27 = #J(Q)_tors, 
-so 26*A.1 corresponds to -[D_t], 
+Here, A.1 corresponds to [c_infty-c_0] = -[D_t] which has order 27 = #J(Q)_tors, 
+so 26*A.1 corresponds to [D_t], 
 so [D_t] and -[D_t] remain in W_3 intersect W_5
 */
 
