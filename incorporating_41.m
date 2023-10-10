@@ -60,7 +60,7 @@ for Q1, Q2 in Points(Xp) do
     image_div := image_under_map(Q1,Q2,1);
     tf := IsLinearlyEquivalent(image_div, D_t_mod_p);  
     if tf then 
-        print Q1, Q2; // meaningful print stmt here
+        print Q1, Q2; // meaningful print stmt here, in fact better to just do an assertion to make sure Q1 = c_0_mod_p and Q2 = P_CM_mod_p
     end if;
 end for;
 
