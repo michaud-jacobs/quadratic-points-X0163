@@ -70,7 +70,7 @@ w := als[1];
 Mw := Matrix(w);
 c_0 := w(c_infty);
 g_quo := 6;
-c_o_plus_P_CM := Divisor(c_0) + Divisor(P_CM);
+c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM);
 for p in PrimesInInterval(3, 37) do
     assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo);
 end for;
