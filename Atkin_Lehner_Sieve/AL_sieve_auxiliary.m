@@ -231,6 +231,7 @@ ChabautyInfo := function(X, AtkinLehner, genusC, p, A, divs, Dpull, B, iA, W, de
 
 	//We keep those x in W which we were unable to eliminate
 	W := [x : x in W | h(x) in jposP]; 
+        print "The set of intersected Wp's is: ", W;
 	return W, B, iA; 
 end function;
 
