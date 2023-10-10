@@ -434,7 +434,9 @@ AL_sieve := function(N : d := N, nonpullbacks := {}, extra_rational_points := {}
 			printf "Sieve worked, but we still need to analyze quadratic points (there are some).";
 		end if;
 	else 
-		error "Sieve did not prove what we wanted.";
+		print "Sieving complete";
+                print "Final sieved set is: ", W;
+  
 	end if;
 
 	return "done";
