@@ -39,7 +39,7 @@ c_0_plus_P_CM_mod_p := place_c_0_mod_p + place_P_CM_mod_p;
 // and returns its image as a divisor under the map (1-w) circ iota 
 // (or more precisely, a representative divisor for the point).
 
-image_under_map := function(Q1, Q2, deg);
+image_under_map_2 := function(Q1, Q2, deg);
     if deg eq 1 then 
         place_Q1 := Place(Q1);
         place_Q2 := Place(Q2);
@@ -54,14 +54,39 @@ image_under_map := function(Q1, Q2, deg);
     return image_div;
 end function;
 
+// much easier (albeit slightly slower to use this function)
+// and it should work find for degree 2 places as well
+// much faster than other function when first calling places
+
+
+// Use this stuff instead, will do it Wednesday night TODO.
+image_under_map := function(D);
+    return OneMinusWmodp(Xp,D-D_infty_mod_p,Mw,p);
+end function;
+
+pls1 := Places(Xp,1);
+pls2 := Places(Xp,2);
+all_deg_2_divs := pls2 cat [Q1 + Q2 : Q1, Q2 in pls1];
+
+for div in all_deg_2_divs do
+    image_div := image_under_map(div);
+    tf := IsLinearlyEquivalent(image_div, D_t_mod_p);
+    // Now do an assert that if true point is as expected
+    
+end for;
+
+
 
 for Q1, Q2 in Points(Xp) do
     print "Considering a new point";
-    image_div := image_under_map(Q1,Q2,1);
+    time image_div := image_under_map(Q1,Q2,1);
+    time image_div_2 := image_under_map_2(Place(Q1) +Place(Q2));
+    assert image_div eq image_div_2;
     tf := IsLinearlyEquivalent(image_div, D_t_mod_p);  
     if tf then 
         print Q1, Q2; // meaningful print stmt here, in fact better to just do an assertion to make sure Q1 = c_0_mod_p and Q2 = P_CM_mod_p
     end if;
+    print "++++++++++++++++";
 end for;
 
 // Now do degree 2 points
