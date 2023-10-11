@@ -17,6 +17,21 @@ seq_R_CM :=  [0, 0, 0, 0, 0, 0, 1/231*(1460*b^2 - 4366*b + 2902),
     1/77*(202*b^2 - 830*b + 923), 1/33*(52*b^2 - 164*b + 185), 1/21*(20*b^2 - 46*b + 34), 
     1/231*(-32*b^2 - 422*b + 899), 1/231*(10*b^2 - 128*b + 311), 1];
 R_CM := X(B) ! seq_R_CM;
+assert IsNormal(B) eq false;
+
+K<a> := QuadraticField(-N);
+assert ClassNumber(K) eq 1;
+OK := Integers(K);
+
+H_ab := RingClassField(EquationOrder(K));
+H := AbsoluteField(NumberField(H_ab));
+assert Degree(H) eq 6;
+assert IsNormal(H);
+assert IsSubfield(K,H);
+assert IsSubfield(B,H);
+H2 := ext<K| MinimalPolynomial(b)>;
+assert IsIsomorphic(H, AbsoluteField(NumberField(H2)));
+
 
 
 reduce_P_CM_mod_p := function(p);
