@@ -12,10 +12,10 @@
 // MWsieve: performs the sieve
 // AL_sieve: Main function, carries out all checks and performs the sieve
 
-load "rank_0_auxiliary.m";
-load "symm_chab.m";
-load "rank_calcs.m";
-load "models_and_maps.m";
+load "Atkin-Lehner_sieve/rank_0_auxiliary.m";
+load "Atkin-Lehner_sieve/symm_chab.m";
+load "Atkin-Lehner_sieve/rank_calcs.m";
+load "Atkin-Lehner_sieve/models_and_maps.m";
 
 // This function computes J_X(F_p) for a curve X
 
