@@ -17,9 +17,12 @@ P_CM_mod_p := Xp ! [GF(p) ! a : a in seq_P_CM];
 
 D_t_mod_p := Place(c_0_mod_p) - Place(c_infty_mod_p);
 
-pls1 := Places(Xp,1);
+pls1 := Places(Xp,1); 
+assert #pls1 eq 31;
 pls2 := Places(Xp,2);
+assert #pls2 eq 1102;
 all_deg_2_divs := pls2 cat [Q1 + Q2 : Q1, Q2 in pls1];
+assert #all_deg_2_divs eq 2063; // since 2063 = 31^2 + 1102
 
 for Q in all_deg_2_divs do
     image_Q := OneMinusWmodp(Xp,Q,Mw,p);
