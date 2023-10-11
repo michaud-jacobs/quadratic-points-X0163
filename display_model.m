@@ -1,4 +1,4 @@
-load "models_and_maps.m";
+load "Atkin-Lehner_sieve/models_and_maps.m";
 X, ws := eqs_quos(163,[]);
 print "Model for X in P^12 is given by: ", X;
 print "The Atkin-Lehner involution w acts via: ", Matrix(ws[1]);
