@@ -21,8 +21,8 @@ pls1 := Places(Xp,1);
 assert #pls1 eq 31;
 pls2 := Places(Xp,2);
 assert #pls2 eq 1102;
-all_deg_2_divs := pls2 cat [Q1 + Q2 : Q1, Q2 in pls1];
-assert #all_deg_2_divs eq 2063; // since 2063 = 31^2 + 1102
+all_deg_2_divs := pls2 cat [pls1[i] + pls2[j] : i,j in [1..#pls1] | i le j];
+assert #all_deg_2_divs eq 1598; // since 1598 = ((31^2 + 31) / 2) + 1102
 
 for Q in all_deg_2_divs do
     image_Q := OneMinusWmodp(Xp,Q,Mw,p);
@@ -38,5 +38,5 @@ for Q in all_deg_2_divs do
 end for;
 
 // We now check that the divisor c_0+P_CM is p-adically lonely
-// Forming the divisor takes a long time (~1 hour)
+// Forming the divisor takes a long time (~1 hour) TODO Check time
 assert IsLonely(Divisor(c_0) + Divisor(P_CM);, p, X, Mw, g_quo);
