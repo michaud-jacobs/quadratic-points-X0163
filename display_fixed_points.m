@@ -1,55 +1,49 @@
+// We compute the fixed points of w on X 
+// We display the coordinates of these points (on the model for X displayed in 'display_model.m')
+// We compute and display the j-invariants and CM orders of these points
+// The output of this file is included at the end of the file
+
 load "Atkin-Lehner_sieve/models_and_maps.m";
 
 N := 163;
-X, als := eqs_quos(N,[]);
+X, ws := eqs_quos(N,[]);
 j := jmap(X,N);
 g := Genus(Gamma0(N));
-w := Matrix(als[1]);
+w := Matrix(ws[1]);
 print "Atkin-Lehner invloution w acts as:", [w[i][i] : i in [1..g]];
 print "+++++++++++++++";
 I := IdentityMatrix(Rationals(), g);
 CR<[x]> := CoordinateRing(AmbientSpace(X));
 
+// We compute the fixed point scheme of w
+
 J1 := &+[ideal<CR | &+[v[i]*x[i] : i in [1..g]]> : v in Basis(Kernel(w + I))];
 J2 := &+[ideal<CR | &+[v[i]*x[i] : i in [1..g]]> : v in Basis(Kernel(w - I))];
-
 Z1 := Scheme(X, J1);
 Z2 := Scheme(X, J2);
 Z := Union(Z1, Z2);
-assert Degree(Z) eq 4;
+assert Degree(Z) eq 4; // 4 fixed points in total, (counting multiplicity)
 
-rat_pts := Points(Z);
-assert #rat_pts eq 1;
-P_CM := rat_pts[1];
+// We first compute the rational fixed point
+
+rat_fixed_pts := Points(Z); 
+assert #rat_fixed_pts eq 1;
+P_CM := rat_fixed_pts[1]; // The unique rational fixed point of w
 seq_P_CM := Eltseq(P_CM);
 print "The rational fixed point P_CM has coordinates:", seq_P_CM;
 jP_CM := j(P_CM)[1];
 print "The point P_CM has j-invariant:", jP_CM, "= -", Factorisation(Integers() ! jP_CM);
-
 tf, DP := HasComplexMultiplication(EllipticCurveWithjInvariant(jP_CM));
 assert tf;
 print "The point P_CM has CM by:", DP;
 print "+++++++++++++++";
 
-K<a> := QuadraticField(-N);
-assert ClassNumber(K) eq 1;
-OK := Integers(K);
+// To compute the cubic fixed point, we first define the number field B
+// Additional checks for the field B and how it relates to H and K are included 
+// in the file 'fixed_points_and_loneliness_additional_checks.m'
 
 T<z> := PolynomialRing(Rationals());
 B<b> := NumberField(z^3-8*z+10);
-assert IsIsomorphic(B, NumberField(HilbertClassPolynomial(-4*N)));
-OB := Integers(B);
-assert IsNormal(B) eq false;
-
-H_ab := RingClassField(EquationOrder(K));
-H := AbsoluteField(NumberField(H_ab));
-assert Degree(H) eq 6;
-assert IsNormal(H);
-assert IsSubfield(K,H);
-assert IsSubfield(B,H);
-H2 := ext<K| MinimalPolynomial(b)>;
-assert IsIsomorphic(H, AbsoluteField(NumberField(H2)));
-
 R_CM := Points(Z,B)[2];
 seq_R_CM := Eltseq(R_CM);
 print "The cubic fixed point R_CM has coordinates:", seq_R_CM;
@@ -58,7 +52,6 @@ print "The point R_CM has j-invariant:", jR_CM;
 tf, DR := HasComplexMultiplication(EllipticCurveWithjInvariant(jR_CM));
 assert tf;
 print "The point R_CM has CM by:", DR;
-
 
 /*
 Atkin-Lehner invloution w acts as: [ 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1 ]
