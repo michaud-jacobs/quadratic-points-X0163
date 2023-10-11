@@ -1,4 +1,4 @@
-load "AL_sieve_auxiliary.m";
+load "Atkin-Lehner_sieve/AL_sieve_auxiliary.m";
 
 p:=41;
 N:=163;
