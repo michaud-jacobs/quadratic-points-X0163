@@ -21,7 +21,7 @@ pls1 := Places(Xp,1);
 assert #pls1 eq 31;
 pls2 := Places(Xp,2);
 assert #pls2 eq 1102;
-all_deg_2_divs := pls2 cat [pls1[i] + pls2[j] : i,j in [1..#pls1] | i le j];
+all_deg_2_divs := pls2 cat [pls1[i] + pls1[j] : i,j in [1..#pls1] | i le j];
 assert #all_deg_2_divs eq 1598; // since 1598 = ((31^2 + 31) / 2) + 1102
 
 for Q in all_deg_2_divs do
