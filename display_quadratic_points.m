@@ -1,3 +1,7 @@
+// We display the coordinates of the quadratic points of X (on the model for X displayed in 'display_model.m')
+// We compute and display the j-invariants and CM orders of these points
+// The output of this file is included at the end of the file
+
 load "Atkin-Lehner_sieve/pullbacks.m";
 
 N := 163;
