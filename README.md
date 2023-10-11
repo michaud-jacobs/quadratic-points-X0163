@@ -3,7 +3,7 @@ Code to accompany the paper "Quadratic points on X_0(163)" by Philippe Michaud-J
 
 We briefly descibre the contents of the repository.
 
-The folder [Atkin-Lehner_sieve](Atkin-Lehner_sieve) contains code to apply the Atkin-Lehner sieve. The code has been copied from https://github.com/TimoKellerMath/QuadraticPoints. More information on the contents of this folder is in it's own [readme](Atkin-Lehner_sieve/README.md).
+The folder [Atkin-Lehner_sieve](Atkin-Lehner_sieve) contains code to apply the Atkin-Lehner sieve. The code has been copied from https://github.com/TimoKellerMath/QuadraticPoints. More information on the contents of this folder is in it's own [readme](Atkin-Lehner_sieve).
 
 - [apply_sieve.log](apply_sieve.log) contains the output of the file [apply_sieve.m](apply_sieve.m).
 - [apply_sieve.m](apply_sieve.m) applies the Atkin-Lehner sieve to the curve X_0(163) using the primes 3 and 5.
