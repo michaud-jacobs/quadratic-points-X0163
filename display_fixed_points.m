@@ -1,3 +1,5 @@
+load "Atkin-Lehner_sieve/models_and_maps.m";
+
 N := 163;
 X, als := eqs_quos(N,[]);
 j := jmap(X,N);
