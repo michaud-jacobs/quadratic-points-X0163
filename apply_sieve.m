@@ -1,4 +1,4 @@
-load "AL_sieve_auxiliary.m";
+load "Atkin-Lehner-sieve/AL_sieve_auxiliary.m";
 
 P_CM_seq := [0, 0,0,0,0,0,54/11,-51/11,35/11,-2,23/11,-9/11,1];
 max_prime_to_use_in_sieve := 5;
