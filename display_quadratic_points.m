@@ -1,4 +1,4 @@
-load "Atkin-Lehner-sieve/pullbacks.m";
+load "Atkin-Lehner_sieve/pullbacks.m";
 
 N := 163;
 X, _, pairs := eqs_quos(N, [[163]]);
