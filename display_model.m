@@ -1,3 +1,6 @@
+// We display a model for the curve X in P^12 together with the matrix w on this model
+// The output of this file is included at the end of the file
+
 load "Atkin-Lehner_sieve/models_and_maps.m";
 X, ws := eqs_quos(163,[]);
 print "Model for X in P^12 is given by: ", X;
