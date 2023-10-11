@@ -1,5 +1,5 @@
-load "models_and_maps.m";
-load "symm_chab.m";
+load "Atkin-Lehner_sieve/models_and_maps.m";
+load "Atkin-Lehner_sieve/symm_chab.m";
 
 N := 163;
 X,als,_,_,c_infty := eqs_quos(N,[]);
