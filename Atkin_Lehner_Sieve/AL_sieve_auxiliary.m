@@ -320,7 +320,7 @@ AL_sieve := function(N : d := N, nonpullbacks := {}, extra_rational_points := {}
 	end if;
 	
 	XN, ws, _, _, cuspInf := eqs_quos(N, []);
-	printf "Nice model for X_0(%o) is: %o\n\n", N, XN;
+	// printf "Nice model for X_0(%o) is: %o\n\n", N, XN;
 
 	if IsSquarefree(N) and N notin [85] then
 	    XN_Cusps := compute_cusps(XN, N, ws, cuspInf, []);
@@ -335,7 +335,7 @@ AL_sieve := function(N : d := N, nonpullbacks := {}, extra_rational_points := {}
 	// note that ALs are returned in ascending index
 	ListOfDivs := [Q : Q in Divisors(N) | GCD(Q, ExactQuotient(N,Q)) eq 1 and Q ne 1];
 	wd := ws[Index(ListOfDivs, d)];
-	printf "w_%o on X_0(%o) is given by: %o\n", d, N, wd;
+	// printf "w_%o on X_0(%o) is given by: %o\n", d, N, wd;
 
 	printf "Genus of X_0(%o) is %o\n", N, Genus(XN);
 	printf "We have found these %o cusps on X_0(%o):\n%o\n", #XN_Cusps, N, XN_Cusps;
