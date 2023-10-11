@@ -40,4 +40,4 @@ end for;
 
 // We now check that the divisor c_0+P_CM is p-adically lonely
 // Forming the divisor takes a long time (~1 hour) TODO Check time
-assert IsLonely(Divisor(c_0) + Divisor(P_CM);, p, X, Mw, g_quo);
+assert IsLonely(Divisor(c_0) + Divisor(P_CM), p, X, Mw, g_quo);
