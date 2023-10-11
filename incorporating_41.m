@@ -1,4 +1,5 @@
-load "Atkin-Lehner_sieve/AL_sieve_auxiliary.m";
+load "Atkin-Lehner_sieve/models_and_maps.m";
+load "Atkin-Lehner_sieve/symm_chab.m";
 
 p:=41;
 N:=163;
