@@ -10,7 +10,7 @@
 //////////////////////////////////////////
 //////////////////////////////////////////
 
-load "models_and_maps.m";
+load "Atkin-Lehner_sieve/models_and_maps.m";
 
 // X is a projective curve over rationals,
 // p prime of good reduction,
