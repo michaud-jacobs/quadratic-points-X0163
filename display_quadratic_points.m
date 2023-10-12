@@ -5,12 +5,12 @@
 load "Atkin-Lehner_sieve/pullbacks.m";
 
 N := 163;
-X, _, pairs := eqs_quos(N, [[163]]);
+X, _, pairs := eqs_quos(N, [[163]]); // Runtime: ~ 1 minute
 bound := 10000;
 pullbacks := pullback_points(X,pairs,N, bound);
 print "Number of pairs of quadratic points found as pullbacks =", #pullbacks;
 print "++++++++++++++++++";
-j := jmap(X,N);
+j := jmap(X,N); // Runtime: ~ 10 minutes
 for tup in pullbacks do
     K<T> := tup[2];
     P := X(K) ! Eltseq(tup[1][1]);
