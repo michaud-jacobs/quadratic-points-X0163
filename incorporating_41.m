@@ -51,8 +51,7 @@ g_quo := 6; // The genus of the curve X/w
 c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM); // Runtime: ~ 1 hour
 assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo); // Runtime: ~ 16 seconds
 
-/*
-Output of for loop:
+/* Output:
 
 Found a divisor with image linearly equivalent to D_t_mod_p
 The divisor was c_0_mod_p + P_CM_mod_p, as expected
