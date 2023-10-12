@@ -9,7 +9,7 @@ load "Atkin-Lehner_sieve/models_and_maps.m";
 load "Atkin-Lehner_sieve/symm_chab.m";
 
 N := 163;
-X,ws,_,_,c_infty := eqs_quos(N,[]); Runtime: ~ 1 minute
+X,ws,_,_,c_infty := eqs_quos(N,[]); // Runtime: ~ 1 minute
 
 // We check that R_CM and P_CM do not reduce to the same point mod p for 
 // odd primes (not 163) up to 500 that are not inert in B
@@ -97,9 +97,8 @@ w := ws[1];
 Mw := Matrix(w);
 c_0 := w(c_infty);
 g_quo := 6; // The genus of the curve X/w
-// Forming the divisor takes a long time (Runtime: ~ 1 hour) 
-c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM);
-for p in PrimesInInterval(5, 37) do
+c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM); // Runtime: ~ 1 hour
+for p in PrimesInInterval(5, 37) do // Runtime: ~ 3 minutes
     assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo);
 end for;
     
