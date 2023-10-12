@@ -24,16 +24,16 @@ D_t_mod_p := Place(c_0_mod_p) - Place(c_infty_mod_p);
 
 // We form a sequence of all degree 2 divisors in X^2(F_p)
 
-pls1 := Places(Xp,1); Runtime: ~ 8 seconds
+pls1 := Places(Xp,1); // Runtime: ~ 8 seconds
 assert #pls1 eq 31;
-pls2 := Places(Xp,2); Runtime ~ 2 minutes
+pls2 := Places(Xp,2); // Runtime: ~ 2 minutes
 assert #pls2 eq 1102;
 all_deg_2_divs := pls2 cat [pls1[i] + pls1[j] : i,j in [1..#pls1] | i le j];
 assert #all_deg_2_divs eq 1598; // since 1598 = ((31^2 + 31) / 2) + 1102
 
 // We verify that the only divisors mapping to [D_t] and [-D_t] are the expected ones
 
-for Q in all_deg_2_divs do
+for Q in all_deg_2_divs do // Runtime: ~ 21 minutes
     image_Q := OneMinusWmodp(Xp,Q,Mw,p);
     if IsLinearlyEquivalent(image_Q, D_t_mod_p) then
         print "Found a divisor with image linearly equivalent to D_t_mod_p";
@@ -47,9 +47,9 @@ for Q in all_deg_2_divs do
 end for;
 
 // Finally we check that the divisor c_0+P_CM is p-adically lonely
-// Forming the divisor takes a long time (Runtime: ~ 1 hour) 
 g_quo := 6; // The genus of the curve X/w
-assert IsLonely(Divisor(c_0) + Divisor(P_CM), p, X, Mw, g_quo);
+c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM); // Runtime: ~ 1 hour
+assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo); // Runtime: ~ 16 seconds
 
 /*
 Output of for loop:
