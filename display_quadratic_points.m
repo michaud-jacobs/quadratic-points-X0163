@@ -25,7 +25,8 @@ for tup in pullbacks do
     print "P coordinates:", P, "where T^2 =", T2, "and j-invariant =", jP, "and CM by", D;    
 end for;
 
-/*
+/* Output: 
+
 Number of pairs of quadratic points found as pullbacks = 9
 ++++++++++++++++++
 P coordinates: (-2*T : -2*T : -T : 0 : -T : 0 : 0 : 5 : -4 : 2 : 2 : -3 : 1) where T^2 = -67 and j-invariant = -147197952000
