@@ -47,7 +47,7 @@ for Q in all_deg_2_divs do
 end for;
 
 // Finally we check that the divisor c_0+P_CM is p-adically lonely
-// Forming the divisor takes a long time (Runtime: ~1 hour) 
+// Forming the divisor takes a long time (Runtime: ~ 1 hour) 
 g_quo := 6; // The genus of the curve X/w
 assert IsLonely(Divisor(c_0) + Divisor(P_CM), p, X, Mw, g_quo);
 
