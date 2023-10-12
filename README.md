@@ -1,6 +1,8 @@
 # quadratic-points-X0163
 Code to accompany the paper "Quadratic points on X_0(163)" by Philippe Michaud-Jacobs and Filip Najman.
 
+All code runs on Magma V2.27-7 (and hopefully on later versions too). Any timings included in the files are marked 'Runtime: ' and refer to computations run on a 2200 MHz AMD Opteron.
+
 We briefly descibre the contents of the repository.
 
 The folder [Atkin-Lehner_sieve](Atkin-Lehner_sieve) contains code to apply the Atkin-Lehner sieve. The code has been copied from https://github.com/TimoKellerMath/QuadraticPoints. More information on the contents of this folder is in it's own [readme](Atkin-Lehner_sieve).
