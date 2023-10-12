@@ -14,7 +14,7 @@ AL_sieve(163 : extra_rational_points := {P_CM_seq}, badPrimes := primes_to_ignor
 
 /*
 The final sieved set, i.e. W_3 intersect W_5 (using p = 3 and 5) 
-can be found at the end of the log file "apply_sieve.log"
+can be found at the end of the log file 'apply_sieve.log'
 
 It is:
 [ 0, A.1, 26*A.1]
