@@ -6,8 +6,8 @@
 load "Atkin-Lehner_sieve/models_and_maps.m";
 
 N := 163;
-X, ws := eqs_quos(N,[]);
-j := jmap(X,N);
+X, ws := eqs_quos(N,[]); // Runtime: ~ 1 minute
+j := jmap(X,N); // Runtime: ~ 10 minutes
 g := Genus(Gamma0(N));
 w := Matrix(ws[1]);
 print "Atkin-Lehner invloution w acts as:", [w[i][i] : i in [1..g]];
