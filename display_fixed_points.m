@@ -53,7 +53,8 @@ tf, DR := HasComplexMultiplication(EllipticCurveWithjInvariant(jR_CM));
 assert tf;
 print "The point R_CM has CM by:", DR;
 
-/*
+/* Output:
+
 Atkin-Lehner invloution w acts as: [ 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1 ]
 +++++++++++++++
 The rational fixed point P_CM has coordinates: [ 0, 0, 0, 0, 0, 0, 54/11, -51/11, 35/11, -2, 23/11, -9/11, 1 ]
