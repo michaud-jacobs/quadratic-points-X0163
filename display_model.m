@@ -6,7 +6,8 @@ X, ws := eqs_quos(163,[]);
 print "Model for X in P^12 is given by: ", X;
 print "The Atkin-Lehner involution w acts via: ", Matrix(ws[1]);
 
-/*
+/* Output:
+
 Model for X in P^12 is given by:  Curve over Rational Field defined by
 x[1]^2 - x[7]^2 - 6*x[9]*x[11] - 198*x[9]*x[12] - 32*x[9]*x[13] + 42*x[10]^2 + 234*x[10]*x[11] - 116*x[10]*x[12] - 292*x[10]*x[13] + 152*x[11]^2 + 26*x[11]*x[12] - 386*x[11]*x[13] + 230*x[12]^2 + 274*x[12]*x[13] + 324*x[13]^2,
 x[1]*x[2] - x[7]*x[8] - 28*x[9]*x[11] - 150*x[9]*x[12] - 5*x[9]*x[13] + 39*x[10]^2 + 179*x[10]*x[11] - 112*x[10]*x[12] - 251*x[10]*x[13] + 132*x[11]^2 + 38*x[11]*x[12] - 313*x[11]*x[13] + 166*x[12]^2 + 220*x[12]*x[13] + 274*x[13]^2,
