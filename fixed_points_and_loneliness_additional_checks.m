@@ -101,3 +101,5 @@ c_0_plus_P_CM := Divisor(c_0) + Divisor(P_CM); // Runtime: ~ 1 hour
 for p in PrimesInInterval(5, 37) do // Runtime: ~ 3 minutes
     assert IsLonely(c_0_plus_P_CM, p, X, Mw, g_quo);
 end for;
+
+// Total time: 3962.379 seconds, Total memory usage: 344.88MB
