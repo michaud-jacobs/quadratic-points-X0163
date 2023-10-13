@@ -10,7 +10,7 @@ P_CM_seq := [0, 0,0,0,0,0,54/11,-51/11,35/11,-2,23/11,-9/11,1];
 max_prime_to_use_in_sieve := 5; 
 primes_to_ignore_in_sieve := {p : p in PrimesInInterval(max_prime_to_use_in_sieve + 1,30)};
 
-AL_sieve(163 : extra_rational_points := {P_CM_seq}, badPrimes := primes_to_ignore_in_sieve);
+AL_sieve(163 : extra_rational_points := {P_CM_seq}, badPrimes := primes_to_ignore_in_sieve); // Runtime: ~ 2 hours
 
 /*
 The final sieved set, i.e. W_3 intersect W_5 (using p = 3 and 5) 
@@ -24,5 +24,5 @@ so 26*A.1 corresponds to [D_t],
 so [D_t] and -[D_t] remain in W_3 intersect W_5
 */
 
-
+// Total time: 7214.569 seconds, Total memory usage: 398.84MB
 
