@@ -78,4 +78,6 @@ The Atkin-Lehner involution w acts via:
 [ 0  0  0  0  0  0  0  0  0  0 -1  0  0]
 [ 0  0  0  0  0  0  0  0  0  0  0 -1  0]
 [ 0  0  0  0  0  0  0  0  0  0  0  0 -1]
+
+Total time: 55.350 seconds, Total memory usage: 64.12MB
 */
