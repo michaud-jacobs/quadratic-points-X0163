@@ -67,5 +67,7 @@ The cubic fixed point R_CM has coordinates: [0, 0, 0, 0, 0, 0, 1/231*(1460*b^2 -
 The point R_CM has j-invariant: 2752644730873110923376756186048000*b^2 - 
     9135004477316871558613859855568000*b + 8294525780713168372352513436726000
 The point R_CM has CM by: -652
+
+Total time: 680.509 seconds, Total memory usage: 118.09MB
 */
 
