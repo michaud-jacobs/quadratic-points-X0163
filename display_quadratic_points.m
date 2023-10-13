@@ -47,4 +47,6 @@ P coordinates: (-3*T : -3*T : -2*T : -T : 0 : -T : -3 : 0 : 1 : 1 : 1 : 0 : 1) w
 and CM by -12
 P coordinates: (-11*T : -8*T : -5*T : -3*T : -T : -T : -1 : 0 : 1 : 1 : 1 : 1 : 0) where T^2 = -3 and j-invariant = -12288000
 and CM by -27
+
+Total time: 734.720 seconds, Total memory usage: 134.84MB
 */
