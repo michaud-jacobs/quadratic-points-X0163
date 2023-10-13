@@ -57,4 +57,6 @@ Found a divisor with image linearly equivalent to D_t_mod_p
 The divisor was c_0_mod_p + P_CM_mod_p, as expected
 Found a divisor with image linearly equivalent to -D_t_mod_p
 The divisor was c_infty_mod_p + P_CM_mod_p, as expected
+
+Total time: 5093.619 seconds, Total memory usage: 421.69MB
 */
